@@ -1,9 +1,14 @@
 name: First Scraper
 
 on:
-  workflow_dispatch:
-  schedule:
-  - cron: "0 0 * * *"
+   workflow_dispatch:
+    inputs:
+      state:
+        description: 'U.S. state to scrape'
+        required: true
+        default: 'ia'
+   schedule:
+    - cron: "0 0 * * *"
 
 permissions:
   contents: write  
