@@ -31,7 +31,7 @@ jobs:
         run: pip install warn-scraper
 
       - name: Scrape
-        run: warn-scraper ${{ inputs.state }} --data-dir ./data/
+        run: warn-scraper ${{ matrix.state }} --data-dir ./data/
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
